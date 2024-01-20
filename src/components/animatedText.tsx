@@ -43,7 +43,7 @@ const AnimatedText = ({
   return (
     <div
       className={clsx(
-        "w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden"
+        "w-full mx-auto py-0 sm:py-2 flex items-center justify-center text-center overflow-hidden"
       )}
     >
       <noscript>
