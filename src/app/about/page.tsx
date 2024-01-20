@@ -10,8 +10,8 @@ import SkyCharacter from "../../../public/sky_engineer.jpg";
 
 const AboutPage = () => {
   return (
-    <section className="pt-8">
-      <AnimatedText className="mb-16">
+    <section className="pt-16 md:pt-0 sm:pt-8">
+      <AnimatedText className="mb-16 lg:!text-7xl md:!text-6xl !text-4xl">
         Passion fueled full-stack developer with a knack for building products.
       </AnimatedText>
       <div className="grid grid-cols-8 w-full gap-16">

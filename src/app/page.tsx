@@ -11,16 +11,16 @@ import CharacterFace from "../../public/character.jpg";
 
 export default function Home() {
   return (
-    <section className="flex flex-col 2xl:flex-row items-center justify-between w-full gap-y-4 2xl:gap-0">
+    <section className="flex flex-col 2xl:flex-row items-center justify-between w-full gap-y-4 2xl:gap-0 pt-16 md:pt-0 sm:pt-0">
       <Image
         priority
         loading="eager"
         alt={userMetaData.name}
         src={CharacterFace}
-        className="rounded-xl object-cover max-w-[400px] 2xl:max-w-[600px] max-h-[400px] 2xl:max-h-[650px]"
+        className="rounded-xl object-cover w-full max-w-[400px] 2xl:max-w-[600px] max-h-[400px] 2xl:max-h-[650px]"
       />
       <div className="w-full 2xl:w-1/2 flex flex-col text-center 2xl:text-start items-center justify-center">
-        <AnimatedText className="!text-5xl text-left">
+        <AnimatedText className="!text-3xl xl:!text-5xl lg:!text-6xl text-center md:!text-5xl sm:!text-5xl 2xl:text-left ">
           Hi, I am {userMetaData.name} Turning ideas into reality 🚀
         </AnimatedText>
         <p className="my-4 font-medium text-base">

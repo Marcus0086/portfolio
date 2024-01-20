@@ -104,8 +104,8 @@ const FeaturedProject = ({
 
 const Projects = () => {
   return (
-    <section className="pt-8">
-      <AnimatedText className="mb-16">
+    <section className="pt-16 md:pt-0 sm:pt-8">
+      <AnimatedText className="mb-8 sm:mb-16 lg:!text-7xl md:!text-6xl !text-4xl">
         Necessity is the mother of invention
       </AnimatedText>
       <div className="grid grid-cols-12 gap-24 gap-y-32">
