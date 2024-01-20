@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import Image from "next/image";
 
 import NavBar from "@/components/navBar";
-
-import "styles/globals.css";
 import { ThemeProvider } from "@/components/themeProvider";
 import { metaData } from "@/components/constants";
+import Footer from "@/components/footer";
 
 import bulb from "../../public/bulb.svg";
-import Image from "next/image";
+import "styles/globals.css";
 
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
 
@@ -26,14 +26,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={montserrat.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <main className="bg-light font-medium w-full min-h-screen">
+          <main className="font-medium w-full min-h-screen">
             <NavBar />
-            <div className="w-full h-full inline-block z-0 bg-light p-32">
+            <div className="w-full h-full inline-block z-0 p-8 xl:p-32 lg:p-24 md:p-16 sm:p-12">
               {children}
             </div>
-            <div className="w-24 fixed right-8 bottom-8 inline-block">
-              <Image src={bulb} alt="light bulb" className="w-full h-auto" />
+            <div className="w-24 fixed right-0 md:right-8 bottom-8 inline-block">
+              <Image
+                src={bulb}
+                alt="light bulb"
+                className="w-1/2 md:w-full h-auto"
+              />
             </div>
+            <Footer />
           </main>
         </ThemeProvider>
       </body>
