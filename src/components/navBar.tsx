@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
+import { IoMdMenu } from "react-icons/io";
 
 import Logo from "@/components/logo";
 import HoverLink from "@/components/hoverLink";
@@ -22,27 +24,11 @@ const NavBar = () => {
         onClick={toggleMenu}
         className="lg:hidden flex flex-col justify-center items-center"
       >
-        <span
-          className={cn(
-            "bg-slate-900 dark:bg-gray-200 block h-0.5 w-6 rounded-sm -translate-y-0.5",
-            isOpened ? "rotate-45 translate-y-1" : "-translate-y-0.5",
-            "transition-transform duration-300 ease-out"
-          )}
-        ></span>
-        <span
-          className={cn(
-            "bg-slate-900 dark:bg-gray-200 block h-0.5 w-6 rounded-sm my-0.5",
-            isOpened ? "opacity-0" : "opacity-100",
-            "transition-transform duration-300 ease-out"
-          )}
-        ></span>
-        <span
-          className={cn(
-            "bg-slate-900 dark:bg-gray-200 block h-0.5 w-6 rounded-sm translate-y-0.5",
-            isOpened ? "-rotate-45 -translate-y-1" : "translate-y-0.5",
-            "transition-transform duration-300 ease-out"
-          )}
-        ></span>
+        {!isOpened ? (
+          <IoMdMenu className="w-8 h-8" />
+        ) : (
+          <IoMdClose className="w-8 h-8" />
+        )}
       </button>
       <div className="w-full hidden lg:flex items-center justify-between">
         <nav className="flex gap-x-10 items-center justify-center">
@@ -73,7 +59,6 @@ const NavBar = () => {
           >
             <TwitterIcon className="!w-6 !h-6" />
           </HoverLink>
-          <ThemeToggle />
         </nav>
       </div>
       {isOpened ? (
@@ -106,12 +91,14 @@ const NavBar = () => {
             >
               <TwitterIcon className="!w-6 !h-6" />
             </HoverLink>
-            <ThemeToggle />
           </nav>
         </div>
       ) : null}
       <div className="absolute top-2 left-[50%] translate-x-[-50%]">
         <Logo />
+      </div>
+      <div className="ml-10">
+        <ThemeToggle />
       </div>
     </header>
   );

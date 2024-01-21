@@ -2,11 +2,6 @@ import { userConfig } from "user.config";
 
 import { PortfolioMetaData } from "@/types";
 
-const metaData: PortfolioMetaData = {
-  title: process.env.title || "",
-  description: process.env.description || "",
-};
-
 const userMetaData = userConfig;
 
 const skillTitles = process.env.skills?.split(",") || [];
@@ -83,4 +78,4 @@ const skills = () => {
   }
   return positions;
 };
-export { metaData, userMetaData, skills };
+export { userMetaData, skills };

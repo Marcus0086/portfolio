@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import NavBar from "@/components/navBar";
 import { ThemeProvider } from "@/components/themeProvider";
-import { metaData } from "@/components/constants";
+import { userMetaData } from "@/components/constants";
 import Footer from "@/components/footer";
 
 import bulb from "../../public/bulb.svg";
@@ -13,8 +13,26 @@ import "styles/globals.css";
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont" });
 
 export const metadata: Metadata = {
-  title: metaData.title,
-  description: metaData.description,
+  title: userMetaData.seoMetadata?.title,
+  description: userMetaData.seoMetadata?.description,
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+    shortcut: "/favicon.png",
+  },
+  openGraph: {
+    title: userMetaData.seoMetadata?.title,
+    description: userMetaData.seoMetadata?.description,
+    type: "website",
+    images: ["/character.jpg"],
+  },
+  twitter: {
+    title: userMetaData.seoMetadata?.title,
+    description: userMetaData.seoMetadata?.description,
+    card: "summary_large_image",
+    images: ["/character.jpg"],
+    creatorId: userMetaData.x.id,
+  },
 };
 
 export default function RootLayout({

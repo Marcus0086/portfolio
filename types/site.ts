@@ -3,6 +3,8 @@ type Socials = "github" | "linkedin" | "x";
 type SocialsMetaData = {
   [key in Socials]: {
     url: string;
+    name?: string;
+    id?: string;
   };
 };
 
@@ -31,6 +33,12 @@ type Project = {
   github?: string;
 };
 
+type SeoMetadata = {
+  title: string;
+  description: string;
+  image: string;
+};
+
 interface UserMetaData extends SocialsMetaData {
   name: string;
   email: string;
@@ -46,6 +54,7 @@ interface UserMetaData extends SocialsMetaData {
   experience?: Experience[];
   education?: Education[];
   projects?: Project[];
+  seoMetadata?: SeoMetadata;
 }
 
 interface PortfolioMetaData {
