@@ -100,7 +100,12 @@ const LiIcon = ({ reference }: { reference: MutableRefObject<null> }) => {
   });
   return (
     <figure className="absolute left-0 stroke-slate-950 dark:stroke-gray-200">
-      <svg className="-rotate-90" width={75} height={75} viewBox="0 0  100 100">
+      <svg
+        className="-rotate-90 w-10 h-10 sm:w-[60px] sm:h-[60px] md:w-[75px] md:h-[75px]"
+        width={75}
+        height={75}
+        viewBox="0 0  100 100"
+      >
         <circle
           cx="75"
           cy="50"

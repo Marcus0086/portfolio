@@ -18,7 +18,7 @@ const Footer = () => {
         >
           {userMetaData.email}
         </a>
-        <div className="flex gap-4 mt-4">
+        <div className="flex gap-4 mt-4 items-center justify-center">
           <Link
             className="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50"
             href={userMetaData.linkedin.url}
@@ -39,9 +39,11 @@ const Footer = () => {
           </Link>
         </div>
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-4 max-w-prose mx-auto">
-          {userMetaData.bio}
+          {userMetaData.seoMetadata?.description}
         </p>
-        <Contact />
+        <div className="mt-4">
+          <Contact />
+        </div>
         <p className="text-xs text-gray-500 dark:text-gray-400 mt-8">
           © 2024 {userMetaData.name}
         </p>
