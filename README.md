@@ -49,4 +49,4 @@ const userConfig = {
 };
 ```
 
-- Use this stringified object as `.env` variable to fill up the necessary data.
+- Now, add this stringified obj back to the `.env`
